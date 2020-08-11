@@ -1,12 +1,18 @@
 import requests
 from bs4 import BeautifulSoup as bs
+from openpyxl import Workbook
 
 url = "https://movie.daum.net/moviedb/grade?movieId=134698&type=netizen"
+
+# html = bs(requests.get(url).content, "lxml", from_encoding="utf-8")
+# count = html.select("body > div > div > div.score_total > strong > em")[0].contents[0].replace(',', '')
+# print(count)
+
 
 import csv
 csv_file = open("./강철비2_daum.csv", 'w', newline='')
 # csv_file = open("./강철비2_다음.csv", 'w', encoding='utf-8', newline='')
-csv_writer = csv.writer(csv_file) # writer를 통해서 파일 작성
+csv_writer = csv.writer(csv_file)
 row = ['평점', '리뷰']
 csv_writer.writerow(row)
 

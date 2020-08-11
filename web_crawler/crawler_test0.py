@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-html = """ 
+html = """
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,31 +15,20 @@ html = """
 </html>
 """
 
-# print(html)
-
-# html 변수에 저장된 페이지를 lxml파서로 파싱하는 코드
+# html 변수에 저장된 페이지를 lxml 파서로 파싱하는 코드
 bs = BeautifulSoup(html, 'lxml')
 
 # 파싱된 정보에서 첫 번째 p 태그를 보여주는 코드
 result = bs.find('p')
 print(result)
 
-# 파싱된 정보에서 모든 p 태그를 보여주는 코드
-result = bs.find_all("p")
+result = bs.find_all('p')
 print(result)
-
-for p in result:
-    print(p.text)
 
 result = bs.find('div', class_='animal')
 print(result)
-for tag in result.find_all('p'):
+
+tags = bs.find_all('div', class_='animal')
+for tag in tags:
     print(tag.text)
 
-result = bs.find('div', id="name")
-print(result)
-
-ps = result.find_all("p")
-print(ps)
-for p in ps:
-    print(p.text)

@@ -15,11 +15,10 @@ bs = BeautifulSoup(page.content, 'lxml')
 
 # a 태그들 중 클래스가 book-subject인 것들을 따로 저장합니다.
 img_sources = bs.find_all('img', class_='book-image')
-# print(img_sources)
+print(img_sources)
 
 img_links = []
 for img_source in img_sources:
-    # print(img_source.attrs)
     img_link = url + img_source.attrs['src']
     img_links.append(img_link)
 print(img_links)
@@ -28,7 +27,6 @@ print(img_links)
 import matplotlib.pyplot as plt
 for img_link in img_links:
     res = requests.get(img_link)
-    print(res.content)
     img = Image.open(BytesIO(res.content))
 
     plt.axis('off')

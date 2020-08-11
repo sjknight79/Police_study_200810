@@ -21,7 +21,7 @@ titles = []
 
 for a in book_list:
     # print(a)
-    print(a.attrs)
+    # print(a.attrs)
     link = url + a.attrs['href']
     links.append(link)
 

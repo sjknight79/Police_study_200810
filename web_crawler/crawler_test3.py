@@ -14,12 +14,8 @@ rec_num_list = []
 
 for number in recommendations:
 	temp = number.text
-	print(temp)
 	# 숫자에 있는 콤마(,) 없애는 코드
 	rec_num = int(temp.replace(',', ''))
 	rec_num_list.append(rec_num)
 
 print(rec_num_list)
-#books > div:nth-child(1) > div:nth-child(1) > div > div.media-body > div > div:nth-child(3) > a > strong
-#books > div:nth-child(1) > div > div > div.media-body > div > div:nth-child(3) > a > strong
-#books > div:nth-child(1) > div:nth-child(2) > div > div.media-body > div > div:nth-child(3) > a
